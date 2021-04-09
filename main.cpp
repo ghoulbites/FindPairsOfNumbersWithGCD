@@ -1,8 +1,7 @@
 #include <iostream>
-#include <string>
 #include <queue>
+#include <string>
 using namespace std;
-
 
 int findGCD(int small, int large) {
 	if (small == 0) return large;
@@ -20,7 +19,7 @@ string pairWithGCD(int small, int large, int gcd) {
 		pair.append(to_string(large));
 		pair.append(")");
 	}
-	
+
 	return pair;
 }
 
@@ -52,11 +51,16 @@ void displayStringQueue(queue <string> someQueue) {
 
 int main() {
 	queue <string> pairsWithGCD5;
-	int start = 5, end = 100, gcd = 5;
+	int start, end, gcd;
+	cout << "Enter starting range: ", cin >> start;
+	cout << "Enter ending range: ", cin >> end;
+	cout << "Enter GCD: ", cin >> gcd;
 
 	pairsWithGCD5 = findPairsWithGCD(start, end, gcd);
 	displayStringQueue(pairsWithGCD5);
 	cout << "Numer of pairs: " << pairsWithGCD5.size() << endl;
 
+
+	system("pause");
 	return 0;
 }
