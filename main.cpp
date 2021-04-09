@@ -1,3 +1,9 @@
+#include <iostream>
+#include <string>
+#include <queue>
+using namespace std;
+
+
 int findGCD(int small, int large) {
 	if (small == 0) return large;
 	return findGCD(large % small, small);
