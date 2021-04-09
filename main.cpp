@@ -1,9 +1,3 @@
-#include <iostream>
-#include <queue>
-#include <string>
-using namespace std;
-
-
 int findGCD(int small, int large) {
 	if (small == 0) return large;
 	return findGCD(large % small, small);
@@ -13,23 +7,12 @@ int findGCD(int small, int large) {
 string pairWithGCD(int small, int large, int gcd) {
 	string pair = "false";
 
-	if (large != 100) {
-		if (findGCD(small, large) == gcd && findGCD(small, 100) == gcd && findGCD(large, 100) == gcd) {
-			pair = "(";
-			pair.append(to_string(small));
-			pair.append(", ");
-			pair.append(to_string(large));
-			pair.append(")");
-		}
-	}
-	else {
-		if (findGCD(small, large) == gcd) {
-			pair = "(";
-			pair.append(to_string(small));
-			pair.append(", ");
-			pair.append(to_string(large));
-			pair.append(")");
-		}
+	if (findGCD(small, large) == gcd) {
+		pair = "(";
+		pair.append(to_string(small));
+		pair.append(", ");
+		pair.append(to_string(large));
+		pair.append(")");
 	}
 	
 	return pair;
@@ -67,6 +50,7 @@ int main() {
 
 	pairsWithGCD5 = findPairsWithGCD(start, end, gcd);
 	displayStringQueue(pairsWithGCD5);
+	cout << "Numer of pairs: " << pairsWithGCD5.size() << endl;
 
 	return 0;
 }
