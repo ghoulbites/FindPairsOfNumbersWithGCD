@@ -63,8 +63,9 @@ void displayStringQueue(queue <string> someQueue) {
 
 int main() {
 	queue <string> pairsWithGCD5;
+	int start = 5, end = 100, gcd = 5;
 
-	pairsWithGCD5 = findPairsWithGCD(0, 100, 5);
+	pairsWithGCD5 = findPairsWithGCD(start, end, gcd);
 	displayStringQueue(pairsWithGCD5);
 
 	return 0;
